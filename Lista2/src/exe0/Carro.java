@@ -7,10 +7,10 @@ public class Carro {
     private int ano;
     private float velocidade;
 
-    public void setModelo(){
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    public void setMarca(){
+    public void setMarca(String marca){
         this.marca = marca  ;
     }
 
@@ -47,6 +47,40 @@ public class Carro {
         this.setAno(ano);
         this.setVelocidade(velocidade);
     }
+    public void acelerar(float x){
+        if (this.velocidade >= 0) {
+            this.velocidade += x;
+        }
+    }
+    public void frear(float x){
+        if (this.velocidade >= 0) {
+            this.velocidade -= x;
+        }
+        else
+            System.out.println("O velocidade deve ser maior que 0");
+    }
 
+    public String exibeDetalhes(){
+        return ("marca: " + this.marca + "\nmodelo: " + this.modelo
+        + "\nano: " + this.ano
+        + "\nvelocidade: " + this.velocidade);
+    }
+    private void limita150(){
+        if (this.velocidade >= 150) {
+            this.velocidade = 150;
+        }
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public float getVelocidade() {
+        return velocidade;
+    }
 }
 
