@@ -1,32 +1,11 @@
 package exe1;
-
 public class Product {
     private int id;
     private String description;
     private float price;
 
-    public int getId() {
-        return id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
+    public Product() {
+        this.description = "no description";
     }
 
     public Product(int id, String description, float price) {
@@ -35,17 +14,35 @@ public class Product {
         this.setPrice(price);
     }
 
-    public Product() {
-        this.description = "No Description";
+    public int getId() {
+        return id;
     }
 
-    public String showProduct() {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 '}';
     }
-
-
 }
