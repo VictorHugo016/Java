@@ -1,10 +1,10 @@
 package exe1;
-
+// classe todo
 public class CarItem {
     private int id;
     private int quantity;
-
-    private Product product;
+    // associação todo-parte
+    private Product product; // classe parte
 
     public CarItem() {
         this.product = new Product();
@@ -20,31 +20,32 @@ public class CarItem {
         return id;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
     public void setProduct(Product product) {
+
         this.product = product;
     }
 
-    public String showCarItem() {
-        return "carItem{" +
+    public String toString() {
+        return "\nCarItem{" +
                 "id=" + id +
                 ", quantity=" + quantity +
-                ", product=" + product.showProduct() +
+                ", product=" + product +
                 '}';
     }
 }
