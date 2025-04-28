@@ -1,14 +1,12 @@
-package RH;
-
-public class Diretor extends Funcionarios {
+package rh;
+public class Diretor extends Funcionario{
     private float acoesEmpresa;
-    public Diretor() {
+    public Diretor(){
         super();
     }
-    public Diretor(String nome, String cpf, String senha, float salario) {
-        super(nome, cpf, senha, salario);
+    public Diretor(String nome, String cpf, String endereco, float salario, float acoesEmpresa){
+        super(nome, cpf, endereco, salario);
         this.acoesEmpresa = acoesEmpresa;
-
     }
     public float getAcoesEmpresa() {
         return acoesEmpresa;
@@ -16,16 +14,15 @@ public class Diretor extends Funcionarios {
     public void setAcoesEmpresa(float acoesEmpresa) {
         this.acoesEmpresa = acoesEmpresa;
     }
-
     @Override
     public String toString() {
-        return "Gerente{" +
+        return "Diretor{" +
                 super.toString() +
-                "açoes da Empresa=" + acoesEmpresa +
-                "}";
+                "acoesEmpresa=" + acoesEmpresa +
+                '}';
     }
+    @Override
     public float calculaSalario() {
-        return this.salario * this.acoesEmpresa;
+        return this.salario + (this.acoesEmpresa * 7) / 12;
     }
-
 }
