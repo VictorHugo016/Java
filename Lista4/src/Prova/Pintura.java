@@ -5,8 +5,8 @@ public class Pintura extends ObraArte{
         super();
         this.tecnica = "Sem tecnica";
     }
-    public pintura(String titulo, String artista, String tecnica){
-        super(titulo, artista)
+    public void pintura(String titulo, String artista, String tecnica){
+        super(titulo, artista);
         this.tecnica = tecnica;
     }
 

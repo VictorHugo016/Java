@@ -2,7 +2,7 @@ package Prova;
 public class Instalacao extends ObraArte {
     private boolean interativa;
     public Instalacao() {
-       super()
+       super();
     }
     public Instalacao( String titulo, String artista, Boolean interativa ){
        super(titulo, artista);
