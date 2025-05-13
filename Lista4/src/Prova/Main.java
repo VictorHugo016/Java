@@ -1,17 +1,17 @@
-package Prova;
+package prova;
 
 public class Main {
     public static void main(String[] args) {
-        Pintura p1 = new Pintura("titulo1", "Victor", "Oleo");
-        Escultura e1 = new Escultura("titulo2", "hugo", "Marmore");
-        Instalacao i1 = new Instalacao("titulo3", "braga", false);
+        Pintura p = new Pintura("Picasso", "Van Googh", "técnica A");
+        Escultura e = new Escultura("óleo", "Davi", "Michelangelo");
 
-        exposicao ex1 = new exposicao("leonardo da 20");
 
-        ex1.addObra(p1);
-        ex1.addObra(e1);
-        ex1.addObra(i1);
+        Exposicao exp = new Exposicao("Dia do artista");
+        exp.addObra(p);
+        exp.addObra(e);
+        exp.exibeObras();
+        exp.resumo();
 
-        System.out.println(ex1.resumeExposicao());
+
     }
 }

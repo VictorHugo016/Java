@@ -1,9 +1,8 @@
-package Prova;
-
+package prova;
 public abstract class ObraArte {
     protected String titulo, artista;
-
-    public ObraArte() { this.titulo = "Sem titulo"; this.artista = "Sem artista"; }
+    public ObraArte() {
+    }
     public ObraArte(String titulo, String artista) {
         this.titulo = titulo;
         this.artista = artista;
@@ -13,12 +12,12 @@ public abstract class ObraArte {
         return titulo;
     }
 
-    public String getArtista() {
-        return artista;
-    }
-
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getArtista() {
+        return artista;
     }
 
     public void setArtista(String artista) {
@@ -30,10 +29,9 @@ public abstract class ObraArte {
         return "ObraArte{" +
                 "titulo='" + titulo + '\'' +
                 ", artista='" + artista + '\'' +
+                ", descrever=" + descrever() +
                 '}';
     }
 
     public abstract String descrever();
 }
-
-

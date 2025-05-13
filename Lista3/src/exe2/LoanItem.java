@@ -1,41 +1,51 @@
 package exe2;
-import exe2.Book;
 
 public class LoanItem {
-    private int ID, loanItem;
-
+    private int id;
+    private int daysLoaned;
+    // associação
     private Book book;
 
     public LoanItem() {
-    this.book = new Book();
-    }
-    public LoanItem(int ID, int loanItem) {
-        this.setID(ID);
-        this.setLoanItem(loanItem);
+        this.book = new Book();
     }
 
-    public int getID() {
-        return ID;
+    public LoanItem(int id, int daysLoaned, Book book) {
+        this.id = id;
+        this.daysLoaned = daysLoaned;
+        this.book = book;
     }
 
-    public int getLoanItem() {
-        return loanItem;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setLoanItem(int loanItem) {
-        this.loanItem = loanItem;
+    public int getDaysLoaned() {
+        return daysLoaned;
+    }
+
+    public void setDaysLoaned(int daysLoaned) {
+        this.daysLoaned = daysLoaned;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 
     @Override
     public String toString() {
-        return  book +
-                "\nLoanItem{" +
-                "ID=" + ID +
-                ", loanItem=" + loanItem +
+        return "\nLoanItem{" +
+                "id=" + id +
+                ", daysLoaned=" + daysLoaned +
+                ", book=" + book +
                 '}';
     }
 }

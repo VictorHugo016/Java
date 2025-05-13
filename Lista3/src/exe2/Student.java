@@ -1,27 +1,27 @@
 package exe2;
 
 public class Student {
-    private int ID;
+    private int id;
     private String name;
 
     public Student() {
     }
 
-    public Student(int ID, String name) {
-        this.setID(ID);
-        this.setName(name);
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
     }
 
     public void setName(String name) {
@@ -31,7 +31,7 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "ID=" + ID +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
     }
