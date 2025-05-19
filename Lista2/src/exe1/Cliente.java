@@ -1,50 +1,58 @@
 package exe1;
-
 public class Cliente {
-    private String nroConta, nroAgencia, nome;
-    private float saldo, valor;
+    private String nroAgencia, nroConta, nome;
+    private float saldo;
 
-    public void setnroConta(String nroConta) {
-
-        if (nroConta.matches("\\d{6}-\\d")) {
-            this.nroConta = nroConta;
-        } else {
-            System.out.println("O nro do conta está errado");
-        }
+    public Cliente() {
+        this.nroAgencia = "1234-5";
+        this.nroConta = "123456-7";
+        this.nome = "sem nome";
     }
 
-    public void setnroAgencia(String nroAgencia) {
-        if (nroAgencia.matches("\\d{4}-\\d")) {
-            this.nroAgencia = nroAgencia;
+    public Cliente(String nroAgencia, String nroConta, String nome, float saldo) {
+        this.setNroAgencia(nroAgencia);
+        this.setNroConta(nroConta);
+        this.setNome(nome);
+        this.setSaldo(saldo);
+    }
+
+    public void setNroAgencia(String nroAgencia) {
+        // métodos de instância
+        if (nroAgencia.length() == 6) {
+             if (nroAgencia.charAt(4) == '-') {
+                 this.nroAgencia = nroAgencia;
+             } else System.out.println("Problema no DV");
+         }
+         else System.out.println("Problema no tamanho");
+    }
+    public void setNroConta(String nroConta) {
+        if (nroConta.length() == 8){
+            if (nroConta.charAt(6) == '-'){
+                this.nroConta = nroConta;
+            }
+            else System.out.println("Problema no DV");
         }
-        else{
-     System.out.println("O numero da agencia está errado");
-        }
+        else System.out.println("Problema no tamanho");
     }
     public void setNome(String nome) {
-        if(nome.length()<30){
+        if (nome.length() <= 30){
             this.nome = nome;
         }
-        else{
-            System.out.println("nome tem mais de 30 caracteres");
-        }
+        else System.out.println("Problema no tamanho");
     }
-
     public void setSaldo(float saldo) {
-        if (saldo >= 0) {
+        if (saldo >= 0){
             this.saldo = saldo;
         }
-        else{
-            System.out.println("O saldo deve ser maior que 0");
-        }
-    }
-
-    public String getNroConta() {
-        return nroConta;
+        else System.out.println("Saldo não pode ser negativo");
     }
 
     public String getNroAgencia() {
         return nroAgencia;
+    }
+
+    public String getNroConta() {
+        return nroConta;
     }
 
     public String getNome() {
@@ -54,34 +62,21 @@ public class Cliente {
     public float getSaldo() {
         return saldo;
     }
-    public void imprimir(){
-        System.out.println("Nro Conta: " + nroConta);
-        System.out.println("Nro Agencia: " + nroAgencia);
-        System.out.println("Nome: " + nome);
-        System.out.println("Saldo: " + saldo);
-    }
+    // depósito de x valores
     public void depositar(float valor) {
-        if (valor > 0) {
-            this.setSaldo(this.saldo + valor);
-        }
+        this.setSaldo(this.saldo + valor);
     }
+    // saque de x valores
     public void sacar(float valor){
-            if(valor>0){
-                this.setSaldo(saldo-valor);
-            }
-        }
-
-    public Cliente() {
-        this.nroConta = "123467-5";
-        this.nome = "Victor Hugo";
-        this.saldo = 2022;
-        this.nroAgencia = "1234-6";
+        this.setSaldo(this.saldo - valor);
     }
 
-    public Cliente(String nroConta, String nroAgencia, String nome, float saldo) {
-        this.setnroConta(nroConta);
-        this.setnroAgencia(nroAgencia);
-        this.setNome(nome);
-        this.setSaldo(saldo);
+    public String exibirCliente() {
+        return "Cliente{" +
+                "nroAgencia='" + nroAgencia + '\'' +
+                ", nroConta='" + nroConta + '\'' +
+                ", nome='" + nome + '\'' +
+                ", saldo=" + saldo +
+                '}';
     }
 }

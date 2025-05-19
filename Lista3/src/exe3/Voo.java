@@ -12,6 +12,7 @@ public class Voo {
     }
     public Voo(int id, String data, String origem, String destino) {
         this.id = id;
+        // objeto de formatação de data
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.data = LocalDate.parse(data, formatter);
         this.origem = origem;

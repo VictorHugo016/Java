@@ -5,6 +5,7 @@ import java.util.Date;
 public class Reserva  {
     private int id, validade;
     private Date data;
+    // associação - agregação
     private Passageiro passageiro;
     private Voo voo;
 
