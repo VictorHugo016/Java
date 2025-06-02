@@ -31,4 +31,9 @@ public class ProdutoController {
                 "Produto removido com sucesso!" : "Produto não removido";
     }
 
+    @PutMapping
+    public Produto atualizar(@RequestBody Long id, @RequestBody Produto novo) {
+        return service.atualizaProduto(id, novo);
+    }
+
 }

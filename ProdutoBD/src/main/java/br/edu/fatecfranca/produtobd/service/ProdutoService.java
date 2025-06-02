@@ -1,6 +1,7 @@
 package br.edu.fatecfranca.produtobd.service;
 
 import br.edu.fatecfranca.produtobd.model.Produto;
+import br.edu.fatecfranca.produtobd.repository.CategoriaRepository;
 import br.edu.fatecfranca.produtobd.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,15 +13,25 @@ public class ProdutoService {
     // objeto representa a classe Produto
     private ProdutoRepository repo;
 
-    public ProdutoService(ProdutoRepository repo) {
+    private CategoriaRepository categoriaRepo;
+
+
+    public ProdutoService(ProdutoRepository repo, categoriaRego categoriaRepo) {
+        this.categoriaRepo = categoriaRepo
         this.repo = repo;
     }
     // lista todos os produtos da tabela produto
+
+
+
+
     public List<Produto> listaProdutos(){
         return repo.findAll();
     }
     // adiciona um produto na tabela produto
     public Produto salvarProduto(Produto produto) {
+        Categoria = categoria
+        categoriaRepo.findbyId(prduto.getCategoria().getId()).orElse(null)
         return repo.save(produto); // produto sem id, vai inserir
     }
     // remove um produto da tabela produto
