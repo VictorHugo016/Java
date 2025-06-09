@@ -1,7 +1,5 @@
 package br.edu.fatecfranca.produtobd.model;
 
-import br.edu.fatecfranca.produtobd.categoria.Categoria;
-import jakarta.persistence.*;
 
 @Entity // entidade do banco de dados
 public class Produto {
@@ -13,20 +11,14 @@ public class Produto {
     private float preco;
     private int qtde;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
-
     public Produto() {
 
     }
 
-    public Produto(Long id, String nome, float preco, int qtde, Categoria categoria) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.qtde = qtde;
-        this.categoria = categoria;
     }
 
     public Long getId() {
@@ -60,12 +52,4 @@ public class Produto {
     public void setQtde(int qtde) {
         this.qtde = qtde;
     }
-
-    public Categoria getCategoria() {
-        return categoria;
     }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-}

@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produto")
-public class ProdutoController {
     private ProdutoService service;
 
     public ProdutoController(ProdutoService service) {
@@ -25,15 +24,9 @@ public class ProdutoController {
         return service.salvarProduto(produto);
     }
 
-    @DeleteMapping
-    public String remover(@PathVariable long id) {
         return service.removerProduto(id) ?
-                "Produto removido com sucesso!" : "Produto não removido";
     }
 
-    @PutMapping
-    public Produto atualizar(@RequestBody Long id, @RequestBody Produto novo) {
         return service.atualizaProduto(id, novo);
     }
-
 }
